@@ -1,0 +1,8 @@
+BasedOnStyle: Google
+IndentAccessModifiers: false
+ColumnLimit: 120
+SortIncludes: CaseSensitive
+IndentWidth: 4
+UseTab: Never
+TabWidth: 4
+SpaceAfterCStyleCast: true
