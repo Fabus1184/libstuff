@@ -7,12 +7,11 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "bst.h"
-#include "decimal.h"
-#include "sort.h"
-#include "timing.h"
+#include "bst/bst.h"
+#include "header-only/decimal.h"
+#include "header-only/timing.h"
+#include "sort/sort.h"
 
-SORT_DEFINE(size_t)
 INIT_TIMING();
 
 #define SIZE 1000000
@@ -23,13 +22,9 @@ void stuff(const void *value, void *arr) {
     ((size_t *) arr)[i++] = *x;
 }
 
-int32_t size_t_comparator(const void *a, const void *b, __attribute__((unused)) size_t size) {
-    const size_t *x = (const size_t *) a;
-    const size_t *y = (const size_t *) b;
-    return *x - *y;
-}
-
 int32_t main(void) {
+    printf(__FILE__ ": ---- Testing binary search tree ----\n");
+
     size_t n = 0;
     struct bst *bst = NULL;
 
@@ -69,7 +64,7 @@ int32_t main(void) {
     END_TIMING();
 
     START_TIMING();
-    assert(is_sorted_size_t(arr, n) == true && "Inorder traversal is not sorted");
+    assert(is_sorted_cmp(arr, n, sizeof(size_t), size_t_comparator) == true && "Inorder traversal is not sorted");
     printf(__FILE__ ": Inorder traversal is sorted\n");
     END_TIMING();
 
@@ -78,5 +73,7 @@ int32_t main(void) {
     free(arr);
     free(values);
 
-    printf(__FILE__ ": PASSED\n");
+    printf(__FILE__ ": ---- PASSED ----\n\n");
+
+    return EXIT_SUCCESS;
 }
