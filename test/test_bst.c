@@ -11,6 +11,7 @@
 #include "header-only/decimal.h"
 #include "header-only/timing.h"
 #include "sort/sort.h"
+#include "test.h"
 
 INIT_TIMING();
 
@@ -23,7 +24,7 @@ void stuff(const void *value, void *arr) {
 }
 
 int32_t main(void) {
-    printf(__FILE__ ": ---- Testing binary search tree ----\n");
+    LOG("---- Testing binary search tree ----\n");
 
     size_t n = 0;
     struct bst *bst = NULL;
@@ -43,37 +44,40 @@ int32_t main(void) {
     }
 
     double_t x = n, y = SIZE;
-    const char *prefix1 = decimal_prefix(&x);
-    const char *prefix2 = decimal_prefix(&y);
-    printf(__FILE__ ": Inserted %lg%s / %lg%s values\n", x, prefix1, y, prefix2);
-
-    END_TIMING();
+    const char *prefix1 = decimal_prefixed(&x);
+    const char *prefix2 = decimal_prefixed(&y);
+    LOG("Inserted %lg%s / %lg%s values, ", x, prefix1, y, prefix2);
+    END_TIMING(printf);
 
     START_TIMING();
     for (size_t i = 0; i < SIZE; ++i) {
         assert(bst_search_cmp(&values[i], bst, sizeof(size_t), size_t_comparator) == true && "Value not found");
     }
-    printf(__FILE__ ": All values found\n");
-    END_TIMING();
+    LOG("All values found, ");
+    END_TIMING(printf);
 
     START_TIMING();
     size_t *arr = malloc(n * sizeof(size_t));
     assert(arr != NULL && "Could not allocate memory for array");
     assert(bst_inorder(bst, stuff, arr) == n && "Inorder did not traverse correct number of nodes");
-    printf(__FILE__ ": Inorder traversal of %zu nodes\n", n);
-    END_TIMING();
+    {
+        double_t x = n;
+        const char *prefix = decimal_prefixed(&x);
+        LOG("Inorder traversal of %g %s nodes, ", x, prefix);
+    }
+    END_TIMING(printf);
 
     START_TIMING();
     assert(is_sorted_cmp(arr, n, sizeof(size_t), size_t_comparator) == true && "Inorder traversal is not sorted");
-    printf(__FILE__ ": Inorder traversal is sorted\n");
-    END_TIMING();
+    LOG("Inorder traversal is sorted, ");
+    END_TIMING(printf);
 
     bst_free(bst);
 
     free(arr);
     free(values);
 
-    printf(__FILE__ ": ---- PASSED ----\n\n");
+    LOG("---- PASSED ----\n\n");
 
     return EXIT_SUCCESS;
 }

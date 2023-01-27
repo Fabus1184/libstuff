@@ -9,6 +9,7 @@
 
 #include "header-only/timing.h"
 #include "sort/sort.h"
+#include "test.h"
 
 INIT_TIMING();
 
@@ -32,7 +33,7 @@ size_t alphabetize_size_t(void *elem, size_t index) {
 }
 
 int32_t main(void) {
-    printf(__FILE__ ": ---- Testing sorting ----\n");
+    LOG("---- Testing sorting ----\n");
 
     srand(time(NULL));
 
@@ -44,51 +45,51 @@ int32_t main(void) {
     }
     {
         double x = SIZE;
-        const char *prefix = decimal_prefix(&x);
-        printf(__FILE__ ": Generated %g %s random values\n", x, prefix);
+        const char *prefix = decimal_prefixed(&x);
+        LOG("Generated %g %s random values\n", x, prefix);
     }
-    END_TIMING();
+    END_TIMING(LOG);
 
     START_TIMING();
     mergesort(array, SIZE, sizeof(size_t));
     {
         double x = SIZE;
-        const char *prefix = decimal_prefix(&x);
-        printf(__FILE__ ": Sorted %g %s values using merge sort\n", x, prefix);
+        const char *prefix = decimal_prefixed(&x);
+        LOG("Sorted %g %s values using merge sort\n", x, prefix);
     }
-    END_TIMING();
+    END_TIMING(LOG);
 
     START_TIMING();
     assert(is_sorted_cmp(array, SIZE, sizeof(size_t), size_t_comparator) == true && "Array not sorted");
-    printf(__FILE__ ": Array is sorted\n");
-    END_TIMING();
+    LOG("Array is sorted\n");
+    END_TIMING(LOG);
 
     START_TIMING();
     shuffle(array, SIZE, sizeof(size_t));
     {
         double x = SIZE;
-        const char *prefix = decimal_prefix(&x);
-        printf(__FILE__ ": Shuffled %g %s values\n", x, prefix);
+        const char *prefix = decimal_prefixed(&x);
+        LOG("Shuffled %g %s values\n", x, prefix);
     }
-    END_TIMING();
+    END_TIMING(LOG);
 
     START_TIMING();
     radixsort(array, SIZE, sizeof(size_t), 10, MAX_DECIMAL_LENGTH, alphabetize_size_t);
     {
         double x = SIZE;
-        const char *prefix = decimal_prefix(&x);
-        printf(__FILE__ ": Sorted %g %s values using radix sort\n", x, prefix);
+        const char *prefix = decimal_prefixed(&x);
+        LOG("Sorted %g %s values using radix sort\n", x, prefix);
     }
-    END_TIMING();
+    END_TIMING(LOG);
 
     START_TIMING();
     assert(is_sorted_cmp(array, SIZE, sizeof(size_t), size_t_comparator) == true && "Array not sorted");
-    printf(__FILE__ ": Array is sorted\n");
-    END_TIMING();
+    LOG("Array is sorted\n");
+    END_TIMING(LOG);
 
     free(array);
 
-    printf(__FILE__ ": ---- PASSED ----\n\n");
+    LOG("---- PASSED ----\n\n");
 
     return EXIT_SUCCESS;
 }

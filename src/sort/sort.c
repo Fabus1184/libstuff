@@ -178,17 +178,28 @@ void radixsort_helper(void *array_, size_t length, size_t size, size_t alphabet_
 
     uint8_t *array = array_;
     void **buckets = calloc(alphabet_size, sizeof(void *));
-
-    for (size_t i = 0; i < alphabet_size; ++i) {
-        buckets[i] = calloc(length, size);
-    }
-
     size_t *bucket_sizes = calloc(alphabet_size, sizeof(size_t));
+    {
+        size_t *bucket_allocs = calloc(alphabet_size, sizeof(size_t));
 
-    for (size_t i = 0; i < length; ++i) {
-        size_t bucket = alphabetize(array + (i * size), index);
-        memcpy((uint8_t *) buckets[bucket] + (bucket_sizes[bucket] * size), array + (i * size), size);
-        bucket_sizes[bucket]++;
+        for (size_t i = 0; i < alphabet_size; ++i) {
+            buckets[i] = calloc(length, size);
+            bucket_allocs[i] = length;
+        }
+
+        for (size_t i = 0; i < length; ++i) {
+            size_t bucket = alphabetize(array + (i * size), index);
+
+            if (bucket_sizes[bucket] >= bucket_allocs[bucket]) {
+                bucket_allocs[bucket] += length / alphabet_size;
+                buckets[bucket] = realloc(buckets[bucket], bucket_allocs[bucket] * size);
+            }
+
+            memcpy((uint8_t *) buckets[bucket] + (bucket_sizes[bucket] * size), array + (i * size), size);
+            bucket_sizes[bucket]++;
+        }
+
+        free(bucket_allocs);
     }
 
     for (size_t i = 0; i < alphabet_size; ++i) {
