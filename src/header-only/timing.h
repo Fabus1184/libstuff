@@ -6,13 +6,28 @@
 
 #include "decimal.h"
 
+/**
+ * Initializes the timing macros.
+ * This has to be called before any of the timing macros.
+ */
 #define INIT_TIMING()                            \
     double __timing_elapsed;                     \
     struct timeval __timing_start, __timing_end; \
     char __timing_buffer[100]
 
+/**
+ * Starts the timing.
+ */
 #define START_TIMING() gettimeofday(&__timing_start, NULL)
 
+/**
+ * Logs the time elapsed since the last call to START_TIMING.
+ * The elapsed time is written to the buffer.
+ * The format is "took 10µs" or "took 10ms" or "took 10s".
+ * Decimal prefixes are used automatically when appropriate.
+ * @param buffer The buffer to write the time to.
+ * @param size The size of the buffer.
+ */
 #define END_TIMING(buffer, size) \
     _END_TIMING(buffer, size, __timing_elapsed, __timing_start, __timing_end, __timing_buffer)
 

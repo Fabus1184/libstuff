@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['value_0',['value',['../structbst.html#aad48bcf44c0636ed751ed8fb7abba2af',1,'bst::value()'],['../struct_maybe.html#aec8595bb7579404ae4c75f23bea3e63c',1,'Maybe::value()']]],
+  ['vector_1',['Vector',['../struct_vector.html',1,'']]],
+  ['vector_2ec_2',['vector.c',['../vector_8c.html',1,'']]],
+  ['vector_2eh_3',['vector.h',['../vector_8h.html',1,'']]],
+  ['vector_5falloc_5fstrategy_4',['VECTOR_ALLOC_STRATEGY',['../vector_8c.html#a82b15389f41105fad2e07b34961b34f7',1,'VECTOR_ALLOC_STRATEGY():&#160;vector.c'],['../vector_8h.html#a82b15389f41105fad2e07b34961b34f7',1,'VECTOR_ALLOC_STRATEGY():&#160;vector.h']]],
+  ['vector_5falloc_5fstrategy_5fdouble_5',['VECTOR_ALLOC_STRATEGY_DOUBLE',['../vector_8c.html#a82b15389f41105fad2e07b34961b34f7a9f57cb42c9581756a83a10e14d444cbf',1,'VECTOR_ALLOC_STRATEGY_DOUBLE():&#160;vector.c'],['../vector_8h.html#a82b15389f41105fad2e07b34961b34f7a9f57cb42c9581756a83a10e14d444cbf',1,'VECTOR_ALLOC_STRATEGY_DOUBLE():&#160;vector.h']]],
+  ['vector_5falloc_5fstrategy_5fplus_5fone_6',['VECTOR_ALLOC_STRATEGY_PLUS_ONE',['../vector_8c.html#a82b15389f41105fad2e07b34961b34f7a134bb2c644b37b4e43ff7080285e97c8',1,'VECTOR_ALLOC_STRATEGY_PLUS_ONE():&#160;vector.c'],['../vector_8h.html#a82b15389f41105fad2e07b34961b34f7a134bb2c644b37b4e43ff7080285e97c8',1,'VECTOR_ALLOC_STRATEGY_PLUS_ONE():&#160;vector.h']]],
+  ['vector_5fclear_7',['vector_clear',['../vector_8c.html#a1efe9754757d78e518a8fd7a2b5caad9',1,'vector_clear(struct Vector *vector):&#160;vector.c'],['../vector_8h.html#a1efe9754757d78e518a8fd7a2b5caad9',1,'vector_clear(struct Vector *vector):&#160;vector.c']]],
+  ['vector_5fenlarge_8',['vector_enlarge',['../vector_8c.html#a0eb6af99e8b0c679c9d69d71bf6d8187',1,'vector.c']]],
+  ['vector_5ffree_9',['vector_free',['../vector_8h.html#af9bbc56be8c9f2cbd167bf36b3eb5fbd',1,'vector_free(struct Vector *vector):&#160;vector.c'],['../vector_8c.html#af9bbc56be8c9f2cbd167bf36b3eb5fbd',1,'vector_free(struct Vector *vector):&#160;vector.c']]],
+  ['vector_5fget_10',['vector_get',['../vector_8c.html#afa4005f2af020c422986e77f239cae20',1,'vector_get(struct Vector *vector, size_t index):&#160;vector.c'],['../vector_8h.html#afa4005f2af020c422986e77f239cae20',1,'vector_get(struct Vector *vector, size_t index):&#160;vector.c']]],
+  ['vector_5finsert_11',['vector_insert',['../vector_8c.html#a6b93244fe3131e8ea29a6f93f99d696e',1,'vector_insert(struct Vector *vector, size_t index, void *element):&#160;vector.c'],['../vector_8h.html#a6b93244fe3131e8ea29a6f93f99d696e',1,'vector_insert(struct Vector *vector, size_t index, void *element):&#160;vector.c']]],
+  ['vector_5fnew_12',['vector_new',['../vector_8c.html#a6feb6ae604813efffb294fad0cfa682f',1,'vector_new(size_t capacity, size_t element_size, enum VECTOR_ALLOC_STRATEGY alloc_strategy):&#160;vector.c'],['../vector_8h.html#a6feb6ae604813efffb294fad0cfa682f',1,'vector_new(size_t capacity, size_t element_size, enum VECTOR_ALLOC_STRATEGY alloc_strategy):&#160;vector.c']]],
+  ['vector_5fpop_5fback_13',['vector_pop_back',['../vector_8c.html#acd9d9255486eb20b26ff0116733df445',1,'vector_pop_back(struct Vector *vector):&#160;vector.c'],['../vector_8h.html#acd9d9255486eb20b26ff0116733df445',1,'vector_pop_back(struct Vector *vector):&#160;vector.c']]],
+  ['vector_5fpush_5fback_14',['vector_push_back',['../vector_8c.html#af032de9c2b963a6be74f0949c383ed6f',1,'vector_push_back(struct Vector *vector, void *element):&#160;vector.c'],['../vector_8h.html#af032de9c2b963a6be74f0949c383ed6f',1,'vector_push_back(struct Vector *vector, void *element):&#160;vector.c']]],
+  ['vector_5fremove_15',['vector_remove',['../vector_8c.html#adbb45512dac9ea54058b586453f40e10',1,'vector_remove(struct Vector *vector, size_t index):&#160;vector.c'],['../vector_8h.html#adbb45512dac9ea54058b586453f40e10',1,'vector_remove(struct Vector *vector, size_t index):&#160;vector.c']]],
+  ['vector_5fshrink_16',['vector_shrink',['../vector_8c.html#adfc4e9afd2dd517ddd5c1b559e20bc99',1,'vector.c']]],
+  ['vector_5fsize_17',['vector_size',['../vector_8c.html#af1c421493e692391f383e2517e3d11a2',1,'vector_size(struct Vector *vector):&#160;vector.c'],['../vector_8h.html#af1c421493e692391f383e2517e3d11a2',1,'vector_size(struct Vector *vector):&#160;vector.c']]]
+];

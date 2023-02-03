@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pow10_0',['pow10',['../test__sort_8c.html#a99acaa0c6f67e9645355a648edbd5d8f',1,'test_sort.c']]]
+  ['just_0',['just',['../maybe_8h.html#a77388e20faea366359b36c720b39b3e0',1,'maybe.h']]]
 ];

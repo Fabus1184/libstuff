@@ -8,7 +8,7 @@ CTESTFLAGS := -O2 -Wall -Wextra -Werror -Wpedantic -std=c2x -Isrc -lc -lm -lpthr
 
 LIBDIR := lib
 
-all: $(LIBDIR)/libbst.so $(LIBDIR)/libsort.so $(LIBDIR)/libhashmap.so
+all: $(LIBDIR)/libbst.so $(LIBDIR)/libsort.so $(LIBDIR)/libhashmap.so $(LIBDIR)/libvector.so
 
 %.o: %.c
 	$(CC) $(CFILEFLAGS) -c $^ -o $@
@@ -20,6 +20,9 @@ $(LIBDIR)/libsort.so: src/sort/sort.o
 	$(CC) $(CLIBFLAGS) $^ -o $@
 
 $(LIBDIR)/libhashmap.so: src/hashmap/hashmap.c
+	$(CC) $(CLIBFLAGS) $^ -o $@
+
+$(LIBDIR)/libvector.so: src/vector/vector.c
 	$(CC) $(CLIBFLAGS) $^ -o $@
 
 clean:

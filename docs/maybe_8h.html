@@ -178,7 +178,8 @@ $(document).ready(function(){initNavTree('maybe_8h.html',''); initResizable(); }
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">maybe.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -188,14 +189,12 @@ $(document).ready(function(){initNavTree('maybe_8h.html',''); initResizable(); }
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for maybe.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="maybe_8h__incl.svg" width="270" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="maybe_8h__incl.svg" width="270" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="maybe_8h__dep__incl.svg" width="176" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="maybe_8h__dep__incl.svg" width="176" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="maybe_8h_source.html">Go to the source code of this file.</a></p>
@@ -204,7 +203,95 @@ This graph shows which files directly or indirectly include this file:</div>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_maybe.html">Maybe</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a5e0f94bca56389a8e835a06ee93f0671"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="maybe_8h.html#a5e0f94bca56389a8e835a06ee93f0671">from_maybe</a> (struct <a class="el" href="struct_maybe.html">Maybe</a> maybe, void *default_value)</td></tr>
+<tr class="separator:a5e0f94bca56389a8e835a06ee93f0671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77388e20faea366359b36c720b39b3e0"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_maybe.html">Maybe</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="maybe_8h.html#a77388e20faea366359b36c720b39b3e0">just</a> (void *value)</td></tr>
+<tr class="separator:a77388e20faea366359b36c720b39b3e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe7c402268d243bba58531f760691785"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_maybe.html">Maybe</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="maybe_8h.html#abe7c402268d243bba58531f760691785">nothing</a> ()</td></tr>
+<tr class="separator:abe7c402268d243bba58531f760691785"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a5e0f94bca56389a8e835a06ee93f0671" name="a5e0f94bca56389a8e835a06ee93f0671"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e0f94bca56389a8e835a06ee93f0671">&#9670;&#160;</a></span>from_maybe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * from_maybe </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_maybe.html">Maybe</a>&#160;</td>
+          <td class="paramname"><em>maybe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>default_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the value contained in the <a class="el" href="struct_maybe.html">Maybe</a> if it is a Just, otherwise returns the default value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maybe</td><td>The <a class="el" href="struct_maybe.html">Maybe</a> to get the value from. </td></tr>
+    <tr><td class="paramname">default_value</td><td>The default value to return if the <a class="el" href="struct_maybe.html">Maybe</a> is a Nothing. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value contained in the <a class="el" href="struct_maybe.html">Maybe</a> if it is a Just, otherwise the default value. </dd></dl>
+
+</div>
+</div>
+<a id="a77388e20faea366359b36c720b39b3e0" name="a77388e20faea366359b36c720b39b3e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77388e20faea366359b36c720b39b3e0">&#9670;&#160;</a></span>just()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="struct_maybe.html">Maybe</a> just </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Lifts a value into a <a class="el" href="struct_maybe.html">Maybe</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value to lift into a <a class="el" href="struct_maybe.html">Maybe</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abe7c402268d243bba58531f760691785" name="abe7c402268d243bba58531f760691785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe7c402268d243bba58531f760691785">&#9670;&#160;</a></span>nothing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="struct_maybe.html">Maybe</a> nothing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns a <a class="el" href="struct_maybe.html">Maybe</a> containing nothing. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

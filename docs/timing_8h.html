@@ -189,13 +189,12 @@ $(document).ready(function(){initNavTree('timing_8h.html',''); initResizable(); 
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for timing.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="timing_8h__incl.svg" width="278" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="timing_8h__incl.svg" width="278" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="timing_8h__dep__incl.svg" width="419" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="timing_8h__dep__incl.svg" width="566" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -241,6 +240,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Logs the time elapsed since the last call to START_TIMING. The elapsed time is written to the buffer. The format is "took 10µs" or "took 10ms" or "took 10s". Decimal prefixes are used automatically when appropriate. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>The buffer to write the time to. </td></tr>
+    <tr><td class="paramname">size</td><td>The size of the buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -261,7 +267,8 @@ Functions</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordtype">double</span> __timing_elapsed;                     \</div>
 <div class="line">    <span class="keyword">struct </span>timeval __timing_start, __timing_end; \</div>
 <div class="line">    <span class="keywordtype">char</span> __timing_buffer[100]</div>
-</div><!-- fragment -->
+</div><!-- fragment --><p>Initializes the timing macros. This has to be called before any of the timing macros. </p>
+
 </div>
 </div>
 <a id="a7077bc5a5eb0ed07e484170e780354d3" name="a7077bc5a5eb0ed07e484170e780354d3"></a>
@@ -278,6 +285,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Starts the timing. </p>
 
 </div>
 </div>

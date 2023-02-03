@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['is_5fjust_0',['is_just',['../struct_maybe.html#ab6935ad3d93bd1e77f2c7ef2ebd67bfc',1,'Maybe']]]
+  ['element_5fsize_0',['element_size',['../struct_vector.html#a5f9bc7862c6178b4e44f9f4ddcdab525',1,'Vector']]]
 ];

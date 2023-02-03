@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['hash1_0',['hash1',['../hashmap_8c.html#adbb85d6bc9907a9c3803b9275c178e14',1,'hashmap.c']]],
-  ['hashmap_2ec_1',['hashmap.c',['../hashmap_8c.html',1,'']]],
-  ['hashmap_2eh_2',['hashmap.h',['../hashmap_8h.html',1,'']]]
+  ['from_5fmaybe_0',['from_maybe',['../maybe_8h.html#a5e0f94bca56389a8e835a06ee93f0671',1,'maybe.h']]]
 ];
