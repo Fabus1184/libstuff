@@ -3,53 +3,65 @@
 
 #include <math.h>
 #include <stddef.h>
+#include <stdio.h>
 
-const char *decimal_prefixed(double_t value, const char **buffer, size_t *length) {
+const char *decimal_prefixed(double_t value, char *buffer, size_t length) {
     const char *prefix;
-    if (value < pow(10, -9)) {
-        prefix = "n";
-        value *= pow(10, 9);
+
+    if (value < pow(10, -21)) {
+        value *= pow(10, 24);
+        prefix = "y";
+    } else if (value < pow(10, -18)) {
+        value *= pow(10, 21);
+        prefix = "z";
+    } else if (value < pow(10, -15)) {
+        value *= pow(10, 18);
+        prefix = "a";
+    } else if (value < pow(10, -12)) {
+        value *= pow(10, 15);
+        prefix = "f";
+    } else if (value < pow(10, -9)) {
+        value *= pow(10, 12);
+        prefix = "p";
     } else if (value < pow(10, -6)) {
-        prefix = "µ";
-        value *= pow(10, 6);
+        value *= pow(10, 9);
+        prefix = "n";
     } else if (value < pow(10, -3)) {
-        prefix = "m";
+        value *= pow(10, 6);
+        prefix = "u";
+    } else if (value < pow(10, 0)) {
         value *= pow(10, 3);
+        prefix = "m";
     } else if (value < pow(10, 3)) {
-        prefix = NULL;
+        prefix = " ";
     } else if (value < pow(10, 6)) {
-        prefix = "k";
         value /= pow(10, 3);
+        prefix = "k";
     } else if (value < pow(10, 9)) {
-        prefix = "M";
         value /= pow(10, 6);
+        prefix = "M";
     } else if (value < pow(10, 12)) {
-        prefix = "G";
         value /= pow(10, 9);
+        prefix = "G";
     } else if (value < pow(10, 15)) {
-        prefix = "T";
         value /= pow(10, 12);
+        prefix = "T";
     } else if (value < pow(10, 18)) {
-        prefix = "P";
         value /= pow(10, 15);
+        prefix = "P";
     } else if (value < pow(10, 21)) {
-        prefix = "E";
         value /= pow(10, 18);
+        prefix = "E";
     } else if (value < pow(10, 24)) {
-        prefix = "Z";
         value /= pow(10, 21);
-    } else if (value < pow(10, 27)) {
-        prefix = "Y";
-        value /= pow(10, 24);
+        prefix = "Z";
     } else {
-        prefix = "Y";
         value /= pow(10, 24);
+        prefix = "Y";
     }
-    if (prefix == NULL) {
-        snprintf(*buffer, *length, "%g", value);
-    } else {
-        snprintf(*buffer, *length, "%g %s", value, prefix);
-    }
+
+    snprintf(buffer, length, "%.3lf %s", value, prefix);
+
     return buffer;
 }
 

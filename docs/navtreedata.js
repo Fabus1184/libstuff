@@ -25,7 +25,8 @@
 var NAVTREE =
 [
   [ "libstuff", "index.html", [
-    [ "Overview", "index.html#autotoc_md1", null ],
+    [ "Documentation", "index.html#autotoc_md1", null ],
+    [ "Overview", "index.html#autotoc_md2", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

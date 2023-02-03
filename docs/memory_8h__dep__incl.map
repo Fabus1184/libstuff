@@ -1,9 +1,12 @@
 <map id="src/header&#45;only/memory.h" name="src/header&#45;only/memory.h">
-<area shape="rect" id="node1" title=" " alt="" coords="171,5,342,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="370,5,541,31"/>
 <area shape="rect" id="node2" href="$bst_8c.html" title=" " alt="" coords="5,79,100,104"/>
 <area shape="rect" id="node3" href="$bst_8h.html" title=" " alt="" coords="124,79,219,104"/>
 <area shape="rect" id="node4" href="$test__bst_8c.html" title=" " alt="" coords="203,152,310,177"/>
-<area shape="rect" id="node5" href="$sort_8c.html" title=" " alt="" coords="295,79,397,104"/>
-<area shape="rect" id="node6" href="$sort_8h.html" title=" " alt="" coords="421,79,524,104"/>
-<area shape="rect" id="node7" href="$test__sort_8c.html" title=" " alt="" coords="417,152,528,177"/>
+<area shape="rect" id="node5" href="$hashmap_8c.html" title=" " alt="" coords="294,79,459,104"/>
+<area shape="rect" id="node6" href="$hashmap_8h.html" title=" " alt="" coords="611,79,777,104"/>
+<area shape="rect" id="node7" href="$test__hashmap_8c.html" title=" " alt="" coords="747,152,889,177"/>
+<area shape="rect" id="node8" href="$sort_8c.html" title=" " alt="" coords="801,79,904,104"/>
+<area shape="rect" id="node9" href="$sort_8h.html" title=" " alt="" coords="484,79,587,104"/>
+<area shape="rect" id="node10" href="$test__sort_8c.html" title=" " alt="" coords="480,152,591,177"/>
 </map>

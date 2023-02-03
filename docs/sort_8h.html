@@ -178,6 +178,7 @@ $(document).ready(function(){initNavTree('sort_8h.html',''); initResizable(); })
 
 <div class="header">
   <div class="summary">
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">sort.h File Reference</div></div>
 </div><!--header-->
@@ -189,18 +190,21 @@ $(document).ready(function(){initNavTree('sort_8h.html',''); initResizable(); })
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for sort.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="sort_8h__incl.svg" width="327" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="sort_8h__incl.svg" width="327" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="sort_8h__dep__incl.svg" width="254" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="sort_8h__dep__incl.svg" width="254" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="sort_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:af79c652d9fad62679264f967d3b4dc16"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8h.html#af79c652d9fad62679264f967d3b4dc16">sorting_function</a>) (void *array, size_t length, size_t size, <a class="el" href="memory_8h.html#abec6b84f0d26e3b1d7967b6dd97680ac">comparator</a> cmp)</td></tr>
+<tr class="separator:af79c652d9fad62679264f967d3b4dc16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ada48cf485fc9acbd061bb9247f28f0d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8h.html#ada48cf485fc9acbd061bb9247f28f0d2">is_sorted</a> (void *array, size_t length, size_t size)</td></tr>
@@ -219,7 +223,24 @@ Functions</h2></td></tr>
 <tr class="separator:ad819b060eac6b5f46ed808aa1f7d4f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f26dd610aceebd57c7c21fe20ae1ded"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8h.html#a3f26dd610aceebd57c7c21fe20ae1ded">radixsort</a> (void *array, size_t length, size_t size, size_t alphabet_size, size_t max_index, size_t(*alphabetize)(void *elem, size_t index))</td></tr>
 <tr class="separator:a3f26dd610aceebd57c7c21fe20ae1ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d0c80a144211eb4e06df9e714953e18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8h.html#a2d0c80a144211eb4e06df9e714953e18">multithreaded_sort</a> (void *array, size_t length, size_t size, size_t threads, <a class="el" href="sort_8c.html#af79c652d9fad62679264f967d3b4dc16">sorting_function</a> sort, <a class="el" href="memory_8h.html#abec6b84f0d26e3b1d7967b6dd97680ac">comparator</a> cmp)</td></tr>
+<tr class="separator:a2d0c80a144211eb4e06df9e714953e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="af79c652d9fad62679264f967d3b4dc16" name="af79c652d9fad62679264f967d3b4dc16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af79c652d9fad62679264f967d3b4dc16">&#9670;&#160;</a></span>sorting_function</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* sorting_function) (void *array, size_t length, size_t size, <a class="el" href="memory_8h.html#abec6b84f0d26e3b1d7967b6dd97680ac">comparator</a> cmp)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a897de15d43b6aee4a276960a918d631f" name="a897de15d43b6aee4a276960a918d631f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a897de15d43b6aee4a276960a918d631f">&#9670;&#160;</a></span>insertionsort()</h2>
@@ -524,6 +545,70 @@ This function runs in <code class="JavaDocCode">O(length * log(length) * cmp)</c
 This function uses <code class="JavaDocCode">length</code> extra memory. </dd>
 <dd>
 This function runs in <code class="JavaDocCode">O(length * log(length) * cmp)</code> </dd></dl>
+
+</div>
+</div>
+<a id="a2d0c80a144211eb4e06df9e714953e18" name="a2d0c80a144211eb4e06df9e714953e18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d0c80a144211eb4e06df9e714953e18">&#9670;&#160;</a></span>multithreaded_sort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void multithreaded_sort </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>array_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n_threads</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sort_8c.html#af79c652d9fad62679264f967d3b4dc16">sorting_function</a>&#160;</td>
+          <td class="paramname"><em>sort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="memory_8h.html#abec6b84f0d26e3b1d7967b6dd97680ac">comparator</a>&#160;</td>
+          <td class="paramname"><em>cmp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Multithreaded sort </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>The array. </td></tr>
+    <tr><td class="paramname">length</td><td>The length of the array. </td></tr>
+    <tr><td class="paramname">size</td><td>The size of each element. </td></tr>
+    <tr><td class="paramname">n_threads</td><td>The number of threads to use. </td></tr>
+    <tr><td class="paramname">sort</td><td>The sorting function to use. </td></tr>
+    <tr><td class="paramname">cmp</td><td>The comparator to use. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This function modifies the array. </dd></dl>
 
 </div>
 </div>

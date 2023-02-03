@@ -16,6 +16,10 @@ bool bst_insert_cmp(const void *value, struct bst **bst, size_t size, comparator
 
 bool bst_insert(const void *value, struct bst **bst, size_t size);
 
+bool bst_delete_cmp(const void *value, struct bst **bst, size_t size, comparator cmp);
+
+bool bst_delete(const void *value, struct bst **bst, size_t size);
+
 bool bst_search_cmp(const void *value, const struct bst *bst, size_t size, comparator cmp);
 
 bool bst_search(const void *value, const struct bst *bst, size_t size);

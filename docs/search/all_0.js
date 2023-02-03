@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['alphabetize_5fsize_5ft_0',['alphabetize_size_t',['../test__sort_8c.html#a9f8acb109ee1ac313d60affe0e537b0e',1,'test_sort.c']]]
+  ['_5fend_5ftiming_0',['_END_TIMING',['../timing_8h.html#abb5db62f422d1ec641676502ed510f21',1,'timing.h']]],
+  ['_5flog_5fprefix_1',['_LOG_PREFIX',['../test_8h.html#a626a639b5015220e6743b034d8d0c5b8',1,'test.h']]]
 ];

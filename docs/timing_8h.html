@@ -178,7 +178,8 @@ $(document).ready(function(){initNavTree('timing_8h.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">timing.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -188,13 +189,13 @@ $(document).ready(function(){initNavTree('timing_8h.html',''); initResizable(); 
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for timing.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="timing_8h__incl.svg" width="323" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="timing_8h__incl.svg" width="278" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="timing_8h__dep__incl.svg" width="254" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="timing_8h__dep__incl.svg" width="419" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -204,14 +205,19 @@ This graph shows which files directly or indirectly include this file:</div>
 Macros</h2></td></tr>
 <tr class="memitem:a4933665cf701fae72f6d0510a4cfe990"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timing_8h.html#a4933665cf701fae72f6d0510a4cfe990">INIT_TIMING</a>()</td></tr>
 <tr class="separator:a4933665cf701fae72f6d0510a4cfe990"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7077bc5a5eb0ed07e484170e780354d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timing_8h.html#a7077bc5a5eb0ed07e484170e780354d3">START_TIMING</a>()&#160;&#160;&#160;gettimeofday(&amp;start, NULL)</td></tr>
+<tr class="memitem:a7077bc5a5eb0ed07e484170e780354d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timing_8h.html#a7077bc5a5eb0ed07e484170e780354d3">START_TIMING</a>()&#160;&#160;&#160;gettimeofday(&amp;__timing_start, NULL)</td></tr>
 <tr class="separator:a7077bc5a5eb0ed07e484170e780354d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41ca9ffd15dc1946595165e02781a933"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timing_8h.html#a41ca9ffd15dc1946595165e02781a933">END_TIMING</a>()</td></tr>
-<tr class="separator:a41ca9ffd15dc1946595165e02781a933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56699452435da8ce53124586791aa4ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timing_8h.html#a56699452435da8ce53124586791aa4ab">END_TIMING</a>(buffer,  size)&#160;&#160;&#160;    <a class="el" href="timing_8h.html#abb5db62f422d1ec641676502ed510f21">_END_TIMING</a>(buffer, size, __timing_elapsed, __timing_start, __timing_end, __timing_buffer)</td></tr>
+<tr class="separator:a56699452435da8ce53124586791aa4ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:abb5db62f422d1ec641676502ed510f21"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timing_8h.html#abb5db62f422d1ec641676502ed510f21">_END_TIMING</a> (char *buffer, size_t size, double elapsed, struct timeval start, struct timeval end, char *__buffer)</td></tr>
+<tr class="separator:abb5db62f422d1ec641676502ed510f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a41ca9ffd15dc1946595165e02781a933" name="a41ca9ffd15dc1946595165e02781a933"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41ca9ffd15dc1946595165e02781a933">&#9670;&#160;</a></span>END_TIMING</h2>
+<a id="a56699452435da8ce53124586791aa4ab" name="a56699452435da8ce53124586791aa4ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56699452435da8ce53124586791aa4ab">&#9670;&#160;</a></span>END_TIMING</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,17 +225,23 @@ Macros</h2></td></tr>
         <tr>
           <td class="memname">#define END_TIMING</td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">buffer, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">size&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;    <a class="el" href="timing_8h.html#abb5db62f422d1ec641676502ed510f21">_END_TIMING</a>(buffer, size, __timing_elapsed, __timing_start, __timing_end, __timing_buffer)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    gettimeofday(&amp;end, NULL);                                                              \</div>
-<div class="line">    elapsed = (end.tv_sec - start.tv_sec) + (pow(10, -6) * (end.tv_usec - start.tv_usec)); \</div>
-<div class="line">    prefix = <a class="code hl_function" href="decimal_8h.html#aa56a6a38ab557e27cbb8f509d3135bb4">decimal_prefix</a>(&amp;elapsed);                                                     \</div>
-<div class="line">    printf(<span class="stringliteral">&quot;Elapsed time: %7g %ss\n&quot;</span>, elapsed, prefix);</div>
-<div class="ttc" id="adecimal_8h_html_aa56a6a38ab557e27cbb8f509d3135bb4"><div class="ttname"><a href="decimal_8h.html#aa56a6a38ab557e27cbb8f509d3135bb4">decimal_prefix</a></div><div class="ttdeci">const char * decimal_prefix(double_t *value)</div><div class="ttdef"><b>Definition:</b> decimal.h:7</div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a4933665cf701fae72f6d0510a4cfe990" name="a4933665cf701fae72f6d0510a4cfe990"></a>
@@ -246,9 +258,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordtype">double</span> elapsed;     \</div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *prefix; \</div>
-<div class="line">    <span class="keyword">struct </span>timeval start, end</div>
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordtype">double</span> __timing_elapsed;                     \</div>
+<div class="line">    <span class="keyword">struct </span>timeval __timing_start, __timing_end; \</div>
+<div class="line">    <span class="keywordtype">char</span> __timing_buffer[100]</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -262,7 +274,60 @@ Macros</h2></td></tr>
           <td class="memname">#define START_TIMING</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;gettimeofday(&amp;start, NULL)</td>
+          <td>&#160;&#160;&#160;gettimeofday(&amp;__timing_start, NULL)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="abb5db62f422d1ec641676502ed510f21" name="abb5db62f422d1ec641676502ed510f21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb5db62f422d1ec641676502ed510f21">&#9670;&#160;</a></span>_END_TIMING()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * _END_TIMING </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>elapsed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct timeval&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct timeval&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>__buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

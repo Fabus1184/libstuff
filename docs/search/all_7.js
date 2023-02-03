@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['main_0',['main',['../test__bst_8c.html#a52d2cba30e6946c95578be946ac12a65',1,'main(void):&#160;test_bst.c'],['../test__sort_8c.html#a52d2cba30e6946c95578be946ac12a65',1,'main(void):&#160;test_sort.c']]],
-  ['max_1',['MAX',['../sort_8c.html#afa99ec4acc4ecb2dc3c2d05da15d0e3f',1,'sort.c']]],
-  ['max_5fdecimal_5flength_2',['MAX_DECIMAL_LENGTH',['../test__sort_8c.html#a119139508bfeaeb754036ac724247a1e',1,'test_sort.c']]],
-  ['memcomparator_3',['memcomparator',['../memory_8h.html#a6d046971e860e454979d59cd5b8aa5f8',1,'memory.h']]],
-  ['memory_2eh_4',['memory.h',['../memory_8h.html',1,'']]],
-  ['merge_5fcmp_5',['merge_cmp',['../sort_8c.html#a1a7ea346bfeb26af5ae9e3cd5e8b7219',1,'sort.c']]],
-  ['mergesort_6',['mergesort',['../sort_8c.html#ad819b060eac6b5f46ed808aa1f7d4f06',1,'mergesort(void *array, size_t length, size_t size):&#160;sort.c'],['../sort_8h.html#ad819b060eac6b5f46ed808aa1f7d4f06',1,'mergesort(void *array, size_t length, size_t size):&#160;sort.c']]],
-  ['mergesort_5fcmp_7',['mergesort_cmp',['../sort_8c.html#ae7ca751424adc070e656b9c3c09fa5ba',1,'mergesort_cmp(void *array_, size_t length, size_t size, comparator cmp):&#160;sort.c'],['../sort_8h.html#a4ddf7c4f7e872bf293628e81eb484c3d',1,'mergesort_cmp(void *array, size_t length, size_t size, comparator cmp):&#160;sort.c']]],
-  ['min_8',['MIN',['../sort_8c.html#a3acffbd305ee72dcd4593c0d8af64a4f',1,'sort.c']]]
+  ['init_5ftiming_0',['INIT_TIMING',['../timing_8h.html#a4933665cf701fae72f6d0510a4cfe990',1,'INIT_TIMING():&#160;timing.h'],['../test__bst_8c.html#a5298000083b47c1fd848faa3112b086d',1,'INIT_TIMING():&#160;test_bst.c'],['../test__hashmap_8c.html#a5298000083b47c1fd848faa3112b086d',1,'INIT_TIMING():&#160;test_hashmap.c'],['../test__sort_8c.html#a5298000083b47c1fd848faa3112b086d',1,'INIT_TIMING():&#160;test_sort.c']]],
+  ['insertionsort_1',['insertionsort',['../sort_8c.html#a897de15d43b6aee4a276960a918d631f',1,'insertionsort(void *array, size_t length, size_t size):&#160;sort.c'],['../sort_8h.html#a897de15d43b6aee4a276960a918d631f',1,'insertionsort(void *array, size_t length, size_t size):&#160;sort.c']]],
+  ['insertionsort_5fcmp_2',['insertionsort_cmp',['../sort_8c.html#ab76815c918229c6a91bbee4934ad4cce',1,'insertionsort_cmp(void *array_, size_t length, size_t size, comparator cmp):&#160;sort.c'],['../sort_8h.html#ae4e02df4f9fbe10f44858971e8782f23',1,'insertionsort_cmp(void *array, size_t length, size_t size, comparator cmp):&#160;sort.c']]],
+  ['is_5fjust_3',['is_just',['../struct_maybe.html#ab6935ad3d93bd1e77f2c7ef2ebd67bfc',1,'Maybe']]],
+  ['is_5fsorted_4',['is_sorted',['../sort_8c.html#ada48cf485fc9acbd061bb9247f28f0d2',1,'is_sorted(void *array, size_t length, size_t size):&#160;sort.c'],['../sort_8h.html#ada48cf485fc9acbd061bb9247f28f0d2',1,'is_sorted(void *array, size_t length, size_t size):&#160;sort.c']]],
+  ['is_5fsorted_5fcmp_5',['is_sorted_cmp',['../sort_8c.html#ac796692e315a1701da4598c17a1c8a71',1,'is_sorted_cmp(void *array_, size_t length, size_t size, comparator cmp):&#160;sort.c'],['../sort_8h.html#a5b1d38d31ca375974b84fe482e7df27e',1,'is_sorted_cmp(void *array, size_t length, size_t size, comparator cmp):&#160;sort.c']]]
 ];

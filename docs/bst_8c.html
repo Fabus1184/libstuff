@@ -193,8 +193,7 @@ $(document).ready(function(){initNavTree('bst_8c.html',''); initResizable(); });
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for bst.c:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="bst_8c__incl.svg" width="558" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="bst_8c__incl.svg" width="558" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -208,6 +207,10 @@ Functions</h2></td></tr>
 <tr class="separator:a13f723b879aee947dcc0a95e40eb5da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51acb48dd83d4fd4eb3521ea8c7b8fc5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bst_8c.html#a51acb48dd83d4fd4eb3521ea8c7b8fc5">bst_insert</a> (const void *value, struct <a class="el" href="structbst.html">bst</a> **<a class="el" href="structbst.html">bst</a>, size_t size)</td></tr>
 <tr class="separator:a51acb48dd83d4fd4eb3521ea8c7b8fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05ae1758d425b9452e8a614eebe2a898"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bst_8c.html#a05ae1758d425b9452e8a614eebe2a898">bst_delete_cmp</a> (const void *value, struct <a class="el" href="structbst.html">bst</a> **<a class="el" href="structbst.html">bst</a>, size_t size, <a class="el" href="memory_8h.html#abec6b84f0d26e3b1d7967b6dd97680ac">comparator</a> cmp)</td></tr>
+<tr class="separator:a05ae1758d425b9452e8a614eebe2a898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb6f7c19fb7f847a9eae036fd5ddead3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bst_8c.html#acb6f7c19fb7f847a9eae036fd5ddead3">bst_delete</a> (const void *value, struct <a class="el" href="structbst.html">bst</a> **<a class="el" href="structbst.html">bst</a>, size_t size)</td></tr>
+<tr class="separator:acb6f7c19fb7f847a9eae036fd5ddead3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77d4570e3aebfcf0c8572b2dd9e47201"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bst_8c.html#a77d4570e3aebfcf0c8572b2dd9e47201">bst_inorder</a> (const struct <a class="el" href="structbst.html">bst</a> *<a class="el" href="structbst.html">bst</a>, void(*f)(const void *, const void *), void *args)</td></tr>
 <tr class="separator:a77d4570e3aebfcf0c8572b2dd9e47201"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace781a3508182cb19a767415cd918e4b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bst_8c.html#ace781a3508182cb19a767415cd918e4b">bst_search_cmp</a> (const void *value, const struct <a class="el" href="structbst.html">bst</a> *<a class="el" href="structbst.html">bst</a>, size_t size, <a class="el" href="memory_8h.html#abec6b84f0d26e3b1d7967b6dd97680ac">comparator</a> cmp)</td></tr>
@@ -222,6 +225,97 @@ Functions</h2></td></tr>
 <tr class="separator:a77273135335e47536f9970eb5c819a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="acb6f7c19fb7f847a9eae036fd5ddead3" name="acb6f7c19fb7f847a9eae036fd5ddead3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb6f7c19fb7f847a9eae036fd5ddead3">&#9670;&#160;</a></span>bst_delete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bst_delete </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structbst.html">bst</a> **&#160;</td>
+          <td class="paramname"><em>bst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Delete a value from a binary search tree. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value to delete. </td></tr>
+    <tr><td class="paramname">bst</td><td>The binary search tree. </td></tr>
+    <tr><td class="paramname">size</td><td>The size of the value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a05ae1758d425b9452e8a614eebe2a898" name="a05ae1758d425b9452e8a614eebe2a898"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05ae1758d425b9452e8a614eebe2a898">&#9670;&#160;</a></span>bst_delete_cmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bst_delete_cmp </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structbst.html">bst</a> **&#160;</td>
+          <td class="paramname"><em>bst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="memory_8h.html#abec6b84f0d26e3b1d7967b6dd97680ac">comparator</a>&#160;</td>
+          <td class="paramname"><em>cmp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Delete a value from a binary search tree using a comparator function. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value to delete. </td></tr>
+    <tr><td class="paramname">bst</td><td>The binary search tree. </td></tr>
+    <tr><td class="paramname">size</td><td>The size of the value. </td></tr>
+    <tr><td class="paramname">cmp</td><td>The comparator function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ace236c26eef1828eca4ec9542b0a3e70" name="ace236c26eef1828eca4ec9542b0a3e70"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ace236c26eef1828eca4ec9542b0a3e70">&#9670;&#160;</a></span>bst_free()</h2>
 

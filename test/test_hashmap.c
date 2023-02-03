@@ -17,10 +17,11 @@ INIT_TIMING();
 #define SIZE 1000000
 
 int32_t main(void) {
-    LOG("---- Testing hashmap ----\n");
+    LOG("---- Testing hashmap ----");
 
     size_t *array = calloc(SIZE, sizeof(size_t));
     struct Map *map = map_create(SIZE, sizeof(size_t), sizeof(size_t), size_t_comparator);
+    char buffer[100];
 
     START_TIMING();
     srand(time(NULL));
@@ -28,21 +29,11 @@ int32_t main(void) {
         array[i] = rand() % SIZE;
         map_insert(map, &i, &array[i]);
     }
-    {
-        double x = SIZE;
-        const char *prefix = decimal_prefixed(&x);
-        LOG("Inserted %g %s elements,", x, prefix);
-    }
-    END_TIMING(LOG);
+    LOG_TIMING("Inserted %s elements", decimal_prefixed(SIZE, buffer, sizeof(buffer)));
 
     START_TIMING();
     assert(map_size(map) == SIZE && "Map size mismatch");
-    {
-        double x = map_size(map);
-        const char *prefix = decimal_prefixed(&x);
-        LOG("Verified map size: %g %s elements,", x, prefix);
-    }
-    END_TIMING(LOG);
+    LOG_TIMING("Verified map size: %s elements", decimal_prefixed(SIZE, buffer, sizeof(buffer)));
 
     START_TIMING();
     for (size_t i = 0; i < SIZE; ++i) {
@@ -50,28 +41,18 @@ int32_t main(void) {
         assert(value != NULL && "Failed to get value");
         assert(*value == array[i] && "Value mismatch");
     }
-    {
-        double x = SIZE;
-        const char *prefix = decimal_prefixed(&x);
-        LOG("Verified %g %s elements\n", x, prefix);
-    }
-    END_TIMING(LOG);
+    LOG_TIMING("Verified %s elements", decimal_prefixed(SIZE, buffer, sizeof(buffer)));
 
     START_TIMING();
     for (size_t i = 0; i < SIZE; ++i) {
         assert(map_delete(map, &i) == true && "Failed to remove value");
     }
-    {
-        double x = SIZE;
-        const char *prefix = decimal_prefixed(&x);
-        LOG("Removed %g %s elements\n", x, prefix);
-    }
-    END_TIMING(LOG);
+    LOG_TIMING("Removed %s elements", decimal_prefixed(SIZE, buffer, sizeof(buffer)));
 
     map_free(map);
     free(array);
 
-    LOG("---- PASSED ----\n\n");
+    LOG("---- PASSED ----");
 
     return EXIT_SUCCESS;
 }

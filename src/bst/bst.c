@@ -57,6 +57,58 @@ bool bst_insert(const void *value, struct bst **bst, size_t size) {
 }
 
 /**
+ * Delete a value from a binary search tree using a comparator function.
+ * @param value The value to delete.
+ * @param bst The binary search tree.
+ * @param size The size of the value.
+ * @param cmp The comparator function.
+ */
+bool bst_delete_cmp(const void *value, struct bst **bst, size_t size, comparator cmp) {
+    if (*bst == NULL) {
+        return false;
+    }
+
+    if (cmp(value, (*bst)->value, size) == 0) {
+        if ((*bst)->left == NULL && (*bst)->right == NULL) {
+            free(*bst);
+            *bst = NULL;
+        } else if ((*bst)->left == NULL) {
+            struct bst *temp = *bst;
+            *bst = (*bst)->right;
+            free(temp);
+        } else if ((*bst)->right == NULL) {
+            struct bst *temp = *bst;
+            *bst = (*bst)->left;
+            free(temp);
+        } else {
+            struct bst *temp = (*bst)->right;
+            while (temp->left != NULL) {
+                temp = temp->left;
+            }
+            (*bst)->value = temp->value;
+            bst_delete_cmp(temp->value, &(*bst)->right, size, cmp);
+        }
+        return true;
+    }
+
+    if (cmp(value, (*bst)->value, size) < 0) {
+        return bst_delete_cmp(value, &(*bst)->left, size, cmp);
+    } else {
+        return bst_delete_cmp(value, &(*bst)->right, size, cmp);
+    }
+}
+
+/**
+ * Delete a value from a binary search tree.
+ * @param value The value to delete.
+ * @param bst The binary search tree.
+ * @param size The size of the value.
+ */
+bool bst_delete(const void *value, struct bst **bst, size_t size) {
+    return bst_delete_cmp(value, bst, size, memcomparator);
+}
+
+/**
  * Traverse a binary search tree in order (left, root, right).
  * @param bst The binary search tree.
  * @param f The function to apply to each value.

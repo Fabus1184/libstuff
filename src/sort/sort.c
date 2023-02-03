@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <memory.h>
+#include <pthread.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -7,6 +8,8 @@
 #include <time.h>
 
 #include "header-only/memory.h"
+
+typedef void (*sorting_function)(void *array, size_t length, size_t size, comparator cmp);
 
 /**
  * Check if an array is sorted using a comparator function.
@@ -234,4 +237,90 @@ void radixsort_helper(void *array_, size_t length, size_t size, size_t alphabet_
 void radixsort(void *array, size_t length, size_t size, size_t alphabet_size, size_t max_index,
                size_t (*alphabetize)(void *elem, size_t index)) {
     radixsort_helper(array, length, size, alphabet_size, max_index, alphabetize, 0);
+}
+
+struct sorting_args {
+    sorting_function sort;
+    void *array;
+    size_t length;
+    size_t size;
+    comparator cmp;
+};
+
+void *sorting_thread(void *args_) {
+    struct sorting_args *args = args_;
+    args->sort(args->array, args->length, args->size, args->cmp);
+    return NULL;
+}
+
+void *merge_cmp_n(void **arrays, size_t *lengths, size_t n_parts, size_t size, comparator cmp) {
+    if (n_parts == 1) {
+        void *array = malloc(lengths[0] * size);
+        memcpy(array, arrays[0], lengths[0] * size);
+        return array;
+    }
+
+    void *a = merge_cmp_n(arrays, lengths, n_parts / 2, size, cmp);
+    void *b = merge_cmp_n(arrays + (n_parts / 2), lengths + (n_parts / 2), n_parts - (n_parts / 2), size, cmp);
+
+    size_t a_length = 0;
+    size_t b_length = 0;
+    for (size_t i = 0; i < n_parts; ++i) {
+        if (i < n_parts / 2) {
+            a_length += lengths[i];
+        } else {
+            b_length += lengths[i];
+        }
+    }
+
+    void *merged = merge_cmp(a, a_length, b, b_length, size, cmp);
+    free(a);
+    free(b);
+
+    return merged;
+}
+
+/**
+ * Multithreaded sort
+ * @param array The array.
+ * @param length The length of the array.
+ * @param size The size of each element.
+ * @param n_threads The number of threads to use.
+ * @param sort The sorting function to use.
+ * @param cmp The comparator to use.
+ * @note This function modifies the array.
+ */
+void multithreaded_sort(void *array_, size_t length, size_t size, size_t n_threads, sorting_function sort,
+                        comparator cmp) {
+    uint8_t *array = array_;
+    pthread_t threads[n_threads];
+    struct sorting_args args[n_threads];
+
+    for (size_t i = 0; i < n_threads; ++i) {
+        args[i] = (struct sorting_args){sort, array, length / n_threads, size, cmp};
+
+        if (i == n_threads - 1) {
+            args[i].length += length % n_threads;
+        }
+
+        pthread_create(&threads[i], NULL, sorting_thread, &args[i]);
+
+        array += (length * size) / n_threads;
+    }
+
+    for (size_t j = 0; j < n_threads; ++j) {
+        pthread_join(threads[j], NULL);
+    }
+
+    void *arrays[n_threads];
+    size_t lengths[n_threads];
+
+    for (size_t i = 0; i < n_threads; ++i) {
+        arrays[i] = args[i].array;
+        lengths[i] = args[i].length;
+    }
+
+    void *merged = merge_cmp_n(arrays, lengths, n_threads, size, cmp);
+    memcpy(array_, merged, length * size);
+    free(merged);
 }

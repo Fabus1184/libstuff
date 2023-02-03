@@ -184,16 +184,17 @@ $(document).ready(function(){initNavTree('decimal_8h.html',''); initResizable();
 <div class="contents">
 <div class="textblock"><code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for decimal.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="decimal_8h__incl.svg" width="182" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="decimal_8h__incl.svg" width="254" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="decimal_8h__dep__incl.svg" width="264" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="decimal_8h__dep__incl.svg" width="419" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -201,22 +202,38 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa56a6a38ab557e27cbb8f509d3135bb4"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decimal_8h.html#aa56a6a38ab557e27cbb8f509d3135bb4">decimal_prefix</a> (double_t *value)</td></tr>
-<tr class="separator:aa56a6a38ab557e27cbb8f509d3135bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e139d3d7ca0af621717e23cded3ea13"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decimal_8h.html#a3e139d3d7ca0af621717e23cded3ea13">decimal_prefixed</a> (double_t value, char *buffer, size_t length)</td></tr>
+<tr class="separator:a3e139d3d7ca0af621717e23cded3ea13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aa56a6a38ab557e27cbb8f509d3135bb4" name="aa56a6a38ab557e27cbb8f509d3135bb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa56a6a38ab557e27cbb8f509d3135bb4">&#9670;&#160;</a></span>decimal_prefix()</h2>
+<a id="a3e139d3d7ca0af621717e23cded3ea13" name="a3e139d3d7ca0af621717e23cded3ea13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e139d3d7ca0af621717e23cded3ea13">&#9670;&#160;</a></span>decimal_prefixed()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char * decimal_prefix </td>
+          <td class="memname">const char * decimal_prefixed </td>
           <td>(</td>
-          <td class="paramtype">double_t *&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramtype">double_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

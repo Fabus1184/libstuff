@@ -1,6 +1,8 @@
 var bst_8c =
 [
     [ "bst", "structbst.html", "structbst" ],
+    [ "bst_delete", "bst_8c.html#acb6f7c19fb7f847a9eae036fd5ddead3", null ],
+    [ "bst_delete_cmp", "bst_8c.html#a05ae1758d425b9452e8a614eebe2a898", null ],
     [ "bst_free", "bst_8c.html#ace236c26eef1828eca4ec9542b0a3e70", null ],
     [ "bst_height", "bst_8c.html#a77273135335e47536f9970eb5c819a81", null ],
     [ "bst_inorder", "bst_8c.html#a77d4570e3aebfcf0c8572b2dd9e47201", null ],

@@ -1,6 +1,7 @@
 <map id="src/header&#45;only/decimal.h" name="src/header&#45;only/decimal.h">
-<area shape="rect" id="node1" title=" " alt="" coords="32,5,203,31"/>
-<area shape="rect" id="node2" href="$timing_8h.html" title=" " alt="" coords="97,79,258,104"/>
+<area shape="rect" id="node1" title=" " alt="" coords="107,5,277,31"/>
+<area shape="rect" id="node2" href="$timing_8h.html" title=" " alt="" coords="111,79,273,104"/>
 <area shape="rect" id="node3" href="$test__bst_8c.html" title=" " alt="" coords="5,152,112,177"/>
-<area shape="rect" id="node4" href="$test__sort_8c.html" title=" " alt="" coords="137,152,247,177"/>
+<area shape="rect" id="node4" href="$test__hashmap_8c.html" title=" " alt="" coords="272,152,413,177"/>
+<area shape="rect" id="node5" href="$test__sort_8c.html" title=" " alt="" coords="137,152,247,177"/>
 </map>

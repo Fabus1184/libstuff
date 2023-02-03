@@ -6,22 +6,21 @@
 
 #include "decimal.h"
 
-#define INIT_TIMING()   \
-    double elapsed;     \
-    const char *prefix; \
-    struct timeval start, end
+#define INIT_TIMING()                            \
+    double __timing_elapsed;                     \
+    struct timeval __timing_start, __timing_end; \
+    char __timing_buffer[100]
 
-#define START_TIMING() gettimeofday(&start, NULL)
+#define START_TIMING() gettimeofday(&__timing_start, NULL)
 
-#define END_TIMING(print)                                                                      \
-    {                                                                                          \
-        gettimeofday(&end, NULL);                                                              \
-        elapsed = (end.tv_sec - start.tv_sec) + (pow(10, -6) * (end.tv_usec - start.tv_usec)); \
-        prefix = decimal_prefixed(&elapsed);                                                   \
-        char buffer[1024];                                                                     \
-        snprintf(buffer, sizeof(buffer), "took %g %s s\n", elapsed, prefix);                   \
-        print(buffer);                                                                         \
-    }                                                                                          \
-    (void) 0
+#define END_TIMING(buffer, size) \
+    _END_TIMING(buffer, size, __timing_elapsed, __timing_start, __timing_end, __timing_buffer)
+
+char *_END_TIMING(char *buffer, size_t size, double elapsed, struct timeval start, struct timeval end, char *__buffer) {
+    gettimeofday(&end, NULL);
+    elapsed = (end.tv_sec - start.tv_sec) + (pow(10, -6) * (end.tv_usec - start.tv_usec));
+    snprintf(buffer, size, "took %15ss", decimal_prefixed(elapsed, __buffer, 100));
+    return buffer;
+}
 
 #endif  // TIMING_H

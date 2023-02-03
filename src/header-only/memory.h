@@ -35,8 +35,8 @@ int32_t size_t_comparator(const void *a, const void *b, size_t size) {
  * @return Negative if a < b, positive if a > b, 0 if a == b.
  */
 int32_t memcomparator(const void *a, const void *b, size_t size) {
-    const uint8_t *x = a;
-    const uint8_t *y = b;
+    const uint8_t *x = (const uint8_t *) a;
+    const uint8_t *y = (const uint8_t *) b;
     for (intmax_t i = size - 1; i >= 0; --i) {
         if (x[i] > y[i]) {
             return 1;

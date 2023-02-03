@@ -196,8 +196,8 @@ $(document).ready(function(){initNavTree('memory_8h_source.html',''); initResiza
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="memory_8h.html#a6d046971e860e454979d59cd5b8aa5f8">   37</a></span>int32_t <a class="code hl_function" href="memory_8h.html#a6d046971e860e454979d59cd5b8aa5f8">memcomparator</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b, <span class="keywordtype">size_t</span> size) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">const</span> uint8_t *x = a;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> uint8_t *y = b;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">const</span> uint8_t *x = (<span class="keyword">const</span> uint8_t *) a;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> uint8_t *y = (<span class="keyword">const</span> uint8_t *) b;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">for</span> (intmax_t i = size - 1; i &gt;= 0; --i) {</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">if</span> (x[i] &gt; y[i]) {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">return</span> 1;</div>
